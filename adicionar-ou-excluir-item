@@ -1,0 +1,41 @@
+carrinho = ["mouse", "monitor", "teclado"]
+
+print(carrinho[1])
+
+carrinho[1] = "monitor 144hz"
+
+print(carrinho)
+
+for item in carrinho:
+    print(item)
+
+# adicionar um item ao final da lista
+carrinho.append("Fone de ouvido")
+print(carrinho)
+
+# adicionando em qualquer posição
+carrinho.insert(0, "Caixa de som")
+print(carrinho)
+
+# Removendo um item
+carrinho.pop(1)
+print(carrinho)
+
+# removendo pelo valor do item
+carrinho.remove("monitor 144hz")
+print(carrinho)
+
+print(len(carrinho))
+
+# -------------------------------------------------------------------------
+
+#           0         1           2
+tupla = ("mouse", "teclado", "monitor", "mouse", "mouse")
+
+num = (8,)
+
+print(tupla[0])
+# tupla[0] = "teclado"
+
+print(tupla.index("mouse"))
+print(tupla.count("mouse"))
