@@ -27,7 +27,7 @@ print(carrinho)
 
 print(len(carrinho))
 
-# -------------------------------------------------------------------------
+# -------------------------------------------------------------------------    
 
 #           0         1           2
 tupla = ("mouse", "teclado", "monitor", "mouse", "mouse")
@@ -39,3 +39,128 @@ print(tupla[0])
 
 print(tupla.index("mouse"))
 print(tupla.count("mouse"))
+----------------------------------------------------------------------
+
+
+fiado = {
+    "Jonas": 55.50,
+    "Marina": 15.00,
+    "Luana": 105.99,
+    "Matheus": 500.00
+}
+# Como acessar um item do dicionário
+print(fiado["Luana"])
+
+# 1. Crie um dicionario com o seu nome, sua idade e sua profissão
+
+# Como alterar um item do dicionario
+# fiado["Matheus"] = 250
+fiado["Matheus"] = fiado["Matheus"] / 2
+print(fiado)
+
+# fiado["Joana"] = float(input('Digite a divida do cliente: '))
+cliente = input('Digite o nome do cliente: ')
+fiado[cliente] = float(input('Digite o valor da divida do cliente: '))
+print(fiado)
+
+# 2. Crie uma nova chave no dicionario do exercicio anterior chama "salario"
+# e digite o salario nela
+
+
+
+
+fiado = {
+    "Jonas": 55.50,
+    "Marina": 15.00,
+    "Luana": 105.99,
+    "Matheus": 500.00
+}
+
+# Como remover um item do dicionario
+del fiado["Matheus"]
+
+# Como visualizar todas as chaves de um dicionario
+print(fiado.keys())
+
+# Como visualizar todos os valores de um dicionario
+print(fiado.values())
+
+# Como visualizar todos os itens de um dicionario
+print(fiado.items())
+
+for chave in fiado:
+    print(f"Cliente: {chave} \n"
+          f"Divida: {fiado[chave]} \n"
+          f"-----------")
+------------------------------------------------
+# Projeto - Agenda telefonica
+agenda = {
+    "Leticia": "85 99999-9998",
+    "Matheus": "88 98989-3333"
+}
+
+def adicionarContato(nome: str, telefone: str) -> None:
+    agenda[nome] = telefone
+    print("Contato adicionado com sucesso!")
+
+def editarContato(nome: str, telefone: str) -> None:
+    if nome in agenda:
+        agenda[nome] = telefone
+        print('Telefone alterado com sucesso!')
+    else:
+        print("Contato não existe!")
+
+def buscarContato(nome: str) -> None:
+    if nome in agenda:
+        print(f"Nome: {nome}")
+        print(f"Telefone: {agenda[nome]}")
+    else:
+        print('Contato não existe')
+
+def deletarContato(nome: str) -> None:
+    if nome in agenda:
+        del agenda[nome]
+        print('Contato removido com sucesso!')
+    else:
+        print('Contato não existe!')
+
+def listarTodos() -> None:
+    print(agenda)
+
+while True:
+    print("---- AGENDA TELEFONICA ----")
+    opcao = int(input("1 - Adicionar contato \n"
+                      "2 - Editar contato \n"
+                      "3 - Buscar contato \n"
+                      "4 - Deletar contato \n"
+                      "5 - Listar todos \n"
+                      "6 - Sair \n"
+                      "Selecione uma opção: "))
+
+    if opcao == 1:
+        nome = input('Digite o nome do contato: ')
+        telefone = input('Digite o telefone: ')
+        adicionarContato(nome, telefone)
+
+    elif opcao == 2:
+        nome = input('Digite o nome do contato: ')
+        telefone = input('Digite o novo telefone: ')
+        editarContato(nome, telefone)
+
+    elif opcao == 3:
+        nome = input('Digite o nome do contato: ')
+        buscarContato(nome)
+        
+    elif opcao == 4:
+        nome = input('Digite o nome do contato: ')
+        deletarContato(nome)
+
+    elif opcao == 5:
+        listarTodos()
+
+    elif opcao == 6:
+        break
+--------------------------------------------------
+
+
+
